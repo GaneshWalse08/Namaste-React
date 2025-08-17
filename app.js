@@ -199,16 +199,7 @@ const Body = () => {
     <div className="body">
     <div className="search-container">Search</div>
     <div className="res-container">
-    {/* <RestrauntCard resData = {resObj[0]} />
-    <RestrauntCard resData = {resObj[1]} />
-    <RestrauntCard resData = {resObj[2]} />
-    <RestrauntCard resData = {resObj[3]} />
-    <RestrauntCard resData = {resObj[4]} />
-    <RestrauntCard resData = {resObj[5]} />
-    <RestrauntCard resData = {resObj[6]} />
-    <RestrauntCard resData = {resObj[7]} />
-    <RestrauntCard resData = {resObj[8]} />
-    <RestrauntCard resData = {resObj[9]} /> */}
+
 
     {resObj.map(rest => (
        <RestrauntCard resData = {rest} key={rest.info.id} />
