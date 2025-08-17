@@ -1,24 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * Header
- *  - Logo
- *  - Navigations
- * 
- * Body
- *  - Search
- *  - restraunt Container
- *  - Restraunt Cards
- * 
- * Footer
- *  - Copyright
- *  - Link
- *  - Address
- *  - Contact
- */
-
-
 const resObj = [
   {
     info: {
@@ -55,7 +34,7 @@ const resObj = [
       areaName: "Chhindwara",
       costForTwo: "₹500 for two",
       cuisines: ["Burgers", "Fried Chicken", "Fast Food"],
-      avgRating: 4.2,
+      avgRating: 3.2,
       sla: { deliveryTime: 35 }
     }
   },
@@ -68,7 +47,7 @@ const resObj = [
       areaName: "Mohan Nagar",
       costForTwo: "₹350 for two",
       cuisines: ["Biryani", "Hyderabadi", "Kebabs"],
-      avgRating: 4.4,
+      avgRating: 3.4,
       sla: { deliveryTime: 45 }
     }
   },
@@ -133,7 +112,7 @@ const resObj = [
       areaName: "Mohan Nagar",
       costForTwo: "₹800 for two",
       cuisines: ["North Indian", "Mughlai", "Tandoor"],
-      avgRating: 4.5,
+      avgRating: 3.9,
       sla: { deliveryTime: 40 }
     }
   },
@@ -146,78 +125,10 @@ const resObj = [
       areaName: "Chhindwara",
       costForTwo: "₹300 for two",
       cuisines: ["Momos", "Tibetan", "Fast Food"],
-      avgRating: 4.2,
+      avgRating: 3.7,
       sla: { deliveryTime: 27 }
     }
   }
 ];
 
-
-
-
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img src="https://img.freepik.com/premium-vector/geometric-vintage-creative-crown-abstract-logo-design-vector-template-vintage-crown-logo-royal-king-queen-concept-symbol-logotype-concept-icon_412311-3665.jpg"></img>
-      </div>
-      <div className="nav-container">
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  )
-}
-
-const RestrauntCard = (props) => {
-  const {resData} = props;
-  const{cloudinaryImageId, name, cuisines, sla, avgRating} = resData?.info;
-  return (
-  <div className="res-card" style ={{backgroundColor: "#f0f0f0"}}>
-    <img
-  className="res-logo"
-  src={
-    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId
-  }
-  alt={resData.info.name}
-/>
-    <h3 className="res-title">{name}</h3>
-    <h4 className="res-tags">{cuisines.join(", ")}</h4>
-    <h5 className="res-rating">{sla.deliveryTime}</h5>
-    <h5 className="res-time">{avgRating}</h5>
-  </div> 
-  )
-}
-
-const Body = () => {
-  return (
-    <div className="body">
-    <div className="search-container">Search</div>
-    <div className="res-container">
-
-
-    {resObj.map(rest => (
-       <RestrauntCard resData = {rest} key={rest.info.id} />
-    ))}
-    </div>
-    </div>
-  )
-}
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  )
-}
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resObj;
